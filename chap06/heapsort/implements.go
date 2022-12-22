@@ -3,6 +3,10 @@ package heapsort
 type HeapStruct struct {
 }
 
+func DefaultHeapStruct() HeapStruct{
+	return HeapStruct{}
+}
+
 func (h HeapStruct) Parent(i int) int {
 	return i >> 1
 }

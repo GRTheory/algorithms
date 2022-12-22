@@ -42,14 +42,14 @@ func (s slice) Subset(n int) any {
 }
 
 func TestGenerateMaxHeap(t *testing.T) {
-	sort := heapsort.HeapSort{heapsort.HeapStruct{}}
+	sort := heapsort.NewHeapSort(heapsort.DefaultHeapStruct())
 	slices := slice{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
 	sort.BuildMaxHeap(slices)
 	t.Log(slices)
 }
 
 func TestHeapsort(t *testing.T) {
-	sort := heapsort.HeapSort{heapsort.HeapStruct{}}
+	sort := heapsort.NewHeapSort(heapsort.DefaultHeapStruct())
 	slices := slice{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
 	sort.HeapSort(slices)
 	t.Log(slices)

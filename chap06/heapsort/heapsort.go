@@ -19,11 +19,15 @@ type HeapSort struct {
 	Interface
 }
 
+func NewHeapSort(heapInterface Interface) HeapSort {
+	return HeapSort{Interface: heapInterface}
+}
+
 func (h HeapSort) HeapSort(slice MySortInterface) {
 	h.BuildMaxHeap(slice)
 	for i := slice.Len(); i >= 1; i-- {
 		slice.Swap(0, i-1)
-		temp := slice.Subset(i-1)
+		temp := slice.Subset(i - 1)
 		h.MaxHeap(temp.(MySortInterface), 1)
 	}
 }
